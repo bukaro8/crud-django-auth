@@ -31,8 +31,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['django-crud-auth-d37e1e69151b.herokuapp.com', 'localhost:8000',
                  '127.0.0.1:8000']
-
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['https://django-crud-auth-d37e1e69151b.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
